@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="500.0" minWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="IndexController">
+   <children>
+      <MenuBar VBox.vgrow="ALWAYS">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Создать новый" />
+              <MenuItem mnemonicParsing="false" text="Открыть" />
+              <MenuItem mnemonicParsing="false" text="Открыть последний" />
+              <MenuItem mnemonicParsing="false" text="Сохранить" />
+              <MenuItem mnemonicParsing="false" text="Сохранить как..." />
+              <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" text="Выйти" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="helpItem" mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+            <Tab fx:id="dashboardTab" text="Dashboard">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="accountsLink" onMouseClicked="#accountsLinkPressed" text="Добавление и редактирование счетов и операций" textFill="BLUE" underline="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="25.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="categoriesLink" onMouseClicked="#categoriesLinkPressed" text="Добавление и редактирование категорий доходов и расходов" textFill="BLUE" underline="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Текущая статистика">
+                           <VBox.margin>
+                              <Insets left="35.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <PieChart fx:id="dashboardChart" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding></PieChart>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+          <Tab fx:id="accountsTab" text="Счета">
+               <content>
+                  <HBox>
+                     <children>
+                        <VBox maxWidth="350.0" minWidth="350.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label maxWidth="1.7976931348623157E308" text="Счета">
+                                       <padding>
+                                          <Insets bottom="5.0" left="25.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane HBox.hgrow="ALWAYS" />
+                                    <ImageView fx:id="help1" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#help1Pressed" pickOnBounds="true" preserveRatio="true" />
+
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="accountTable" prefHeight="429.0" prefWidth="338.0">
+                                <columns>
+                                  <TableColumn fx:id="accountCol" prefWidth="75.0" text="Счет" />
+                                  <TableColumn fx:id="accountDescriptionCol" prefWidth="75.0" text="Описание" />
+                                  <TableColumn fx:id="accountSumCol" prefWidth="187.0" text="Баланс" />
+                                </columns>
+                              </TableView>
+                              <HBox maxHeight="30.0" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Button fx:id="addAccount" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#addAccountPress" prefWidth="100.0" text="Добавить" HBox.hgrow="NEVER" />
+                                    <Button fx:id="redactAccount" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#redactAccountPress" prefWidth="100.0" text="Редактировать" HBox.hgrow="NEVER" />
+                                    <Button fx:id="delAccount" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#delAccountPress" prefWidth="100.0" text="Удалить" HBox.hgrow="NEVER" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="7.0" top="5.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label maxWidth="1.7976931348623157E308" text="Операции">
+                                       <padding>
+                                          <Insets bottom="5.0" left="25.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane HBox.hgrow="ALWAYS" />
+                                    <ImageView fx:id="help2" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#help2Pressed" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="operationTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="dateCol" prefWidth="75.0" text="Дата" />
+                                  <TableColumn fx:id="typeCol" prefWidth="75.0" text="Тип" />
+                                  <TableColumn fx:id="sumCol" prefWidth="75.0" text="Сумма" />
+                                  <TableColumn fx:id="fromCol" prefWidth="75.0" text="Откуда" />
+                                  <TableColumn fx:id="whereCol" prefWidth="75.0" text="Куда" />
+                                  <TableColumn fx:id="catCol" prefWidth="75.0" text="Категория" />
+                                  <TableColumn fx:id="descrCol" prefWidth="75.0" text="Описание" />
+                                  <TableColumn fx:id="dateCol1" prefWidth="75.0" text="Дата" />
+                                </columns>
+                              </TableView>
+                              <HBox maxHeight="30.0" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Button fx:id="addOperation" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#addOperaionPress" prefWidth="100.0" text="Добавить" HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="redactOperation" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#redactOperationPress" prefWidth="100.0" text="Редактировать" HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="delOperation" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#delOperationPress" prefWidth="100.0" text="Удалить" HBox.hgrow="ALWAYS" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="7.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+          <Tab fx:id="categoryTab" text="Категории">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="20.0" prefWidth="958.0">
+                           <children>
+                              <Label maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="128.0" text="Категории">
+                                 <padding>
+                                    <Insets bottom="5.0" left="25.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="32.0" prefWidth="803.0" />
+                              <ImageView fx:id="help3" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#help3Pressed" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="categoryTable" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                          <columns>
+                            <TableColumn fx:id="catNameCol" prefWidth="75.0" text="Название счета" />
+                            <TableColumn fx:id="catSumCol" prefWidth="75.0" text="Сумма" />
+                            <TableColumn fx:id="catTypeCol" prefWidth="75.0" text="Тип" />
+                          </columns>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TableView>
+                        <HBox maxHeight="30.0" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Button fx:id="addCategory" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#addCategoryPress" prefWidth="100.0" text="Добавить" />
+                              <Button fx:id="redactCategory" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#redactCategoryPress" prefWidth="100.0" text="Редактировать" />
+                              <Button fx:id="delCategory" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#delCategoryPress" prefWidth="100.0" text="Удалить" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="7.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

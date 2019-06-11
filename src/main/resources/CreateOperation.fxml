@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="430.0" maxWidth="570.0" minHeight="430.0" minWidth="570.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OperationController">
+   <children>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="80.0" text="Дата" HBox.hgrow="ALWAYS" />
+            <DatePicker fx:id="operationDate" maxHeight="1.7976931348623157E308" maxWidth="130.0" minWidth="130.0" prefWidth="130.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="80.0" text="Тип" HBox.hgrow="ALWAYS" />
+            <ComboBox fx:id="operationType" maxHeight="1.7976931348623157E308" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" value="$defVal1" HBox.hgrow="ALWAYS">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:id="defVal1" fx:value="Приход" />
+                        <String fx:value="Расход" />
+                        <String fx:value="Перевод" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+         </children>
+      </HBox>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="80.0" text="Сумма" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="operationSum" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="80.0" text="Откуда" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="operationFrom" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="80.0" text="Куда" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="operationWhere" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="80.0" text="Категория" HBox.hgrow="ALWAYS" />
+            <ComboBox fx:id="operationCategory" maxHeight="1.7976931348623157E308" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" value="$defVal2" HBox.hgrow="ALWAYS">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:id="defVal2" fx:value="Приход" />
+                        <String fx:value="Расход" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+         </children>
+      </HBox>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="80.0" prefWidth="80.0" text="Описание" HBox.hgrow="ALWAYS" />
+            <TextArea fx:id="operationDescription" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </TextArea>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="cancelOperation" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#cancelOperationPressed" text="Отмена" />
+            <Button fx:id="createOperation" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#createOperationPressed" prefHeight="25.0" prefWidth="58.0" text="ОК">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="2.0" left="2.0" top="2.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>

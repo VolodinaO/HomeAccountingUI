@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="168.0" prefWidth="471.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WizardController">
+      <children>
+      <Label fx:id="firstLabel" prefHeight="40.0" prefWidth="600.0" text="Для начала работы создайте новый Счет." wrapText="true">
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </VBox.margin></Label>
+      <Label fx:id="secondLabel" prefHeight="37.0" prefWidth="600.0" text="Для этого, укажите его Название, Описание и Баланс денежных средств." wrapText="true">
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </VBox.margin></Label>
+      <Label fx:id="thirdLabel" prefHeight="49.0" prefWidth="600.0" text="После этого Вы сможете редактировать счет или удалить его, нажав на кнопки Изменить или Удалить, располагающиеся под блоком счетов." wrapText="true">
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </VBox.margin></Label>
+      <HBox prefHeight="15.0" prefWidth="600.0" spacing="420.0">
+         <children>
+            <Button fx:id="backButton" maxWidth="80.0" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#backButtonPressed" prefWidth="80.0" text="Назад">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="forwardButton" maxWidth="80.0" minWidth="80.0" mnemonicParsing="false" onMouseClicked="#forwardButtonPressed" prefWidth="80.0" text="Вперед">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></Button>
+         </children>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

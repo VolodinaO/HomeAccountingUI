@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="260.0" maxWidth="560.0" minHeight="260.0" minWidth="560.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AccountController">
+   <children>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="80.0" prefHeight="25.0" prefWidth="52.0" text="Название" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="accountName" maxWidth="100.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="80.0" text="Описание" HBox.hgrow="ALWAYS" />
+            <TextArea fx:id="accountDescription" maxHeight="1.7976931348623157E308" maxWidth="400.0" prefWidth="480.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </TextArea>
+         </children>
+      </HBox>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="80.0" text="Баланс" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="accountSum" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="cancelRedactAccountButton" maxWidth="60.0" minWidth="60.0" mnemonicParsing="false" onMouseClicked="#redactAccountCancelPress" prefWidth="60.0" text="Отмена" />
+            <Button fx:id="okRedactAccountButton" maxWidth="60.0" minWidth="60.0" mnemonicParsing="false" onMouseClicked="#redactAccountOkPress" prefWidth="60.0" text="ОК" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="2.0" left="2.0" top="2.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>
